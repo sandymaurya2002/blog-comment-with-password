@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_104433) do
+ActiveRecord::Schema.define(version: 2021_05_18_072250) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_05_15_104433) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
+    t.string "avatar"
   end
 
   create_table "wikisies", force: :cascade do |t|

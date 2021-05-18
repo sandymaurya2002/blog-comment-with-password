@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-http_basic_authenticate_with name: "snady", password: "password", except: [:index, :show]
+# http_basic_authenticate_with name: "snady", password: "password", except: [:index, :show]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -26,7 +26,7 @@ http_basic_authenticate_with name: "snady", password: "password", except: [:inde
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
+        format.html { redirect_to posts_url, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,10 +65,10 @@ http_basic_authenticate_with name: "snady", password: "password", except: [:inde
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:firstname, :lastname, :email, :content, :status)
+      params.require(:post).permit(:firstname, :lastname, :email, :content, :status, :avatar)
     end
 
-  http_basic_authenticate_with name: "snady", password: "password", except: [:index, :show]
+  # http_basic_authenticate_with name: "snady", password: "password", except: [:index, :show]
 
   
 
