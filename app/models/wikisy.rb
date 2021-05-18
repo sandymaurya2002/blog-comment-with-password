@@ -1,0 +1,2 @@
+class Wikisy < ApplicationRecord
+end
